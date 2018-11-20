@@ -1,0 +1,870 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Flowchart1" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Flowchart1_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>DocumentFormat.OpenXml.Wordprocessing</x:String>
+      <x:String>DocumentFormat.OpenXml.Drawing.Charts</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Flowchart1" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dataTest" />
+    </Flowchart.Variables>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+        <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[dataTest]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\sgnanasekar4048\Desktop\data\data.csv" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+            <Sequence DisplayName="Sequence" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="getUserType" />
+              </Sequence.Variables>
+              <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="http://olam.azurewebsites.net/#/login">
+                <ui:OpenBrowser.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  email'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="000801">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ec4f506eb2512055dd589a13f2ce46c6" Selector="&lt;webctrl id='email' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  password'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="olam">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d72b305888ab913a2914bd1cbf426689" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  test'" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c88dc39328d7a0608f050b386a5e55a8" Selector="&lt;webctrl type='submit' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dataTest]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d7f5235124c43c87774d3ef6bd444994" Selector="&lt;webctrl aaname='Add New User' css-selector='body&amp;gt;app-root&amp;gt;app-home&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;button' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  uid'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;userid&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="df249028cfde775665ef9656abd70e6e" Selector="&lt;webctrl id='uid' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;password&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a8217cb90b1ca6be1c54fc4af3983297" Selector="&lt;webctrl name='password' parentid='userAddModal' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;password&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c791b1c1bb787482172a0df60e35e29" Selector="&lt;webctrl name='confirmPassword' parentid='userAddModal' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;firstname&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c776c5a0637ceca72a27f7f085f0ff17" Selector="&lt;webctrl name='firstName' parentid='userAddModal' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;lastname&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="99b6aa4ca9367716330909b310c465de" Selector="&lt;webctrl name='lastName' parentid='userAddModal' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;mobile&quot;).ToString]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f4186aa4643090e5a7bad2a5edca4e09" Selector="&lt;webctrl name='phone' parentid='userAddModal' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[row(&quot;role&quot;).ToString]">
+                                  <ui:SelectItem.Items>
+                                    <scg:List x:TypeArguments="x:String" Capacity="16">
+                                      <x:String>Select Role</x:String>
+                                      <x:String>General Manager</x:String>
+                                      <x:String>Regional Manager</x:String>
+                                      <x:String>Estate Manager</x:String>
+                                      <x:String>Assistant Manager</x:String>
+                                      <x:String>CDQ_Harvester</x:String>
+                                      <x:String>CDQ_Fertilizer</x:String>
+                                      <x:String>Harvester_Worker</x:String>
+                                      <x:String>Human Resources Personnel</x:String>
+                                    </scg:List>
+                                  </ui:SelectItem.Items>
+                                  <ui:SelectItem.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b1b48aafcf2ae2d020c710a4a1f09fa9" Selector="&lt;webctrl name='role' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:SelectItem.Target>
+                                </ui:SelectItem>
+                                <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="text" DisplayName="Get Attribute 'SELECT'" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+                                  <ui:GetAttribute.Result>
+                                    <OutArgument x:TypeArguments="x:String">[getUserType]</OutArgument>
+                                  </ui:GetAttribute.Result>
+                                  <ui:GetAttribute.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="db707a0494080b76b41c89189460c68f" Selector="&lt;webctrl name='role' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:GetAttribute.Target>
+                                </ui:GetAttribute>
+                                <If Condition="[getUserType.Equals(&quot;General Manager&quot;)]" sap2010:WorkflowViewState.IdRef="If_1">
+                                  <If.Then>
+                                    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="02-Mouila">
+                                      <ui:SelectItem.Items>
+                                        <scg:List x:TypeArguments="x:String" Capacity="4">
+                                          <x:String>Plant</x:String>
+                                          <x:String>02-Mouila</x:String>
+                                        </scg:List>
+                                      </ui:SelectItem.Items>
+                                      <ui:SelectItem.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                      </ui:SelectItem.Target>
+                                    </ui:SelectItem>
+                                  </If.Then>
+                                  <If.Else>
+                                    <If Condition="[getUserType.Equals(&quot;Estate Manager&quot;)]" sap2010:WorkflowViewState.IdRef="If_2">
+                                      <If.Then>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="GeneralManager GM(000002)">
+                                            <ui:SelectItem.Items>
+                                              <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                <x:String>Select Reporter</x:String>
+                                                <x:String>GeneralManager GM(000002)</x:String>
+                                                <x:String>GM Test(0000022)</x:String>
+                                                <x:String>GM Test(0000032)</x:String>
+                                                <x:String>GM Test(000071)</x:String>
+                                                <x:String>GM TTM1(000099)</x:String>
+                                                <x:String>GM Rubber(000104)</x:String>
+                                                <x:String>GM Rubber_1(000111)</x:String>
+                                                <x:String>GM INT(0002001)</x:String>
+                                                <x:String>GenMag Test(00021)</x:String>
+                                                <x:String>GenMag Gabon(000301)</x:String>
+                                                <x:String>GM Gabon(000501)</x:String>
+                                                <x:String>GM Gabon_1(000801)</x:String>
+                                                <x:String>GN Gang1(000901)</x:String>
+                                                <x:String>GM Gang2(000910)</x:String>
+                                                <x:String>GM Gang3(000920)</x:String>
+                                                <x:String>GM1 DEMO1(006100)</x:String>
+                                                <x:String>GM1 Gang01(007010)</x:String>
+                                                <x:String>GM DEMO(009001)</x:String>
+                                                <x:String>GM110 TTM1(010228)</x:String>
+                                                <x:String>GM0120 TT0021(011937)</x:String>
+                                                <x:String>GM020 TT001(011947)</x:String>
+                                                <x:String>GM2h0 TTNuY1(011997)</x:String>
+                                                <x:String>GM1130 TTM41(012228)</x:String>
+                                                <x:String>TES110 TEST1(020202)</x:String>
+                                                <x:String>1GM2110 T12TM1(0205611)</x:String>
+                                                <x:String>GM1G10 TTM18(030228)</x:String>
+                                                <x:String>TES310 TEST3(030303)</x:String>
+                                                <x:String>GM1150 TTM51(05228)</x:String>
+                                                <x:String>GM2056 LN3056(090090)</x:String>
+                                                <x:String>GM267 LN352(090091)</x:String>
+                                                <x:String>GM268 LN322(090591)</x:String>
+                                                <x:String>GM GTest(100021)</x:String>
+                                                <x:String>GGM GTest(100081)</x:String>
+                                                <x:String>GenMngr Test(100101)</x:String>
+                                                <x:String>GenMngr Test(100201)</x:String>
+                                                <x:String>GenMngr Test(100301)</x:String>
+                                                <x:String>GenMngr Test(100401)</x:String>
+                                                <x:String>GenMngr Test(100501)</x:String>
+                                                <x:String>GenMngr Test(100601)</x:String>
+                                                <x:String>GenMngr Test(100701)</x:String>
+                                                <x:String>1042_tst 9183_tst(10429183)</x:String>
+                                                <x:String>1229_tst 2112_tst(12292112)</x:String>
+                                                <x:String>1326_tst 7710_tst(13267710)</x:String>
+                                                <x:String>1790_tst 7863_tst(17907863)</x:String>
+                                                <x:String>1885_tst 8923_tst(18858923)</x:String>
+                                                <x:String>GM GTest(200021)</x:String>
+                                                <x:String>GGM GTest(200081)</x:String>
+                                                <x:String>GenMngr Test(200201)</x:String>
+                                                <x:String>GM21G102 TT2M182(2140280)</x:String>
+                                              </scg:List>
+                                            </ui:SelectItem.Items>
+                                            <ui:SelectItem.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3907846569b4100ff8359266d9fec4e3" Selector="&lt;webctrl name='rm' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                            </ui:SelectItem.Target>
+                                          </ui:SelectItem>
+                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="02-Mouila">
+                                            <ui:SelectItem.Items>
+                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                <x:String>Plant</x:String>
+                                                <x:String>02-Mouila</x:String>
+                                              </scg:List>
+                                            </ui:SelectItem.Items>
+                                            <ui:SelectItem.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                            </ui:SelectItem.Target>
+                                          </ui:SelectItem>
+                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="01">
+                                            <ui:SelectItem.Items>
+                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                <x:String>Estate</x:String>
+                                              </scg:List>
+                                            </ui:SelectItem.Items>
+                                            <ui:SelectItem.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="98b44c3f0194576d4845e35495d7f34b" Selector="&lt;webctrl name='estate' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                            </ui:SelectItem.Target>
+                                          </ui:SelectItem>
+                                          <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <If Condition="[getUserType.Equals(&quot;Assistant Manager&quot;)]" sap2010:WorkflowViewState.IdRef="If_3">
+                                          <If.Then>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                              <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="EM Test(0000023)">
+                                                <ui:SelectItem.Items>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                    <x:String>Select Reporter</x:String>
+                                                    <x:String>GeneralManager GM(000002)</x:String>
+                                                    <x:String>GM Test(0000022)</x:String>
+                                                    <x:String>GM Test(0000032)</x:String>
+                                                    <x:String>GM Test(000071)</x:String>
+                                                    <x:String>GM TTM1(000099)</x:String>
+                                                    <x:String>GM Rubber(000104)</x:String>
+                                                    <x:String>GM Rubber_1(000111)</x:String>
+                                                    <x:String>GM INT(0002001)</x:String>
+                                                    <x:String>GenMag Test(00021)</x:String>
+                                                    <x:String>GenMag Gabon(000301)</x:String>
+                                                    <x:String>GM Gabon(000501)</x:String>
+                                                    <x:String>GM Gabon_1(000801)</x:String>
+                                                    <x:String>GN Gang1(000901)</x:String>
+                                                    <x:String>GM Gang2(000910)</x:String>
+                                                    <x:String>GM Gang3(000920)</x:String>
+                                                    <x:String>GM1 DEMO1(006100)</x:String>
+                                                    <x:String>GM1 Gang01(007010)</x:String>
+                                                    <x:String>GM DEMO(009001)</x:String>
+                                                    <x:String>GM110 TTM1(010228)</x:String>
+                                                    <x:String>GM0120 TT0021(011937)</x:String>
+                                                    <x:String>GM020 TT001(011947)</x:String>
+                                                    <x:String>GM2h0 TTNuY1(011997)</x:String>
+                                                    <x:String>GM1130 TTM41(012228)</x:String>
+                                                    <x:String>TES110 TEST1(020202)</x:String>
+                                                    <x:String>1GM2110 T12TM1(0205611)</x:String>
+                                                    <x:String>GM1G10 TTM18(030228)</x:String>
+                                                    <x:String>TES310 TEST3(030303)</x:String>
+                                                    <x:String>GM1150 TTM51(05228)</x:String>
+                                                    <x:String>GM2056 LN3056(090090)</x:String>
+                                                    <x:String>GM267 LN352(090091)</x:String>
+                                                    <x:String>GM268 LN322(090591)</x:String>
+                                                    <x:String>GM GTest(100021)</x:String>
+                                                    <x:String>GGM GTest(100081)</x:String>
+                                                    <x:String>GenMngr Test(100101)</x:String>
+                                                    <x:String>GenMngr Test(100201)</x:String>
+                                                    <x:String>GenMngr Test(100301)</x:String>
+                                                    <x:String>GenMngr Test(100401)</x:String>
+                                                    <x:String>GenMngr Test(100501)</x:String>
+                                                    <x:String>GenMngr Test(100601)</x:String>
+                                                    <x:String>GenMngr Test(100701)</x:String>
+                                                    <x:String>1042_tst 9183_tst(10429183)</x:String>
+                                                    <x:String>1229_tst 2112_tst(12292112)</x:String>
+                                                    <x:String>1326_tst 7710_tst(13267710)</x:String>
+                                                    <x:String>1790_tst 7863_tst(17907863)</x:String>
+                                                    <x:String>1885_tst 8923_tst(18858923)</x:String>
+                                                    <x:String>GM GTest(200021)</x:String>
+                                                    <x:String>GGM GTest(200081)</x:String>
+                                                    <x:String>GenMngr Test(200201)</x:String>
+                                                    <x:String>GM21G102 TT2M182(2140280)</x:String>
+                                                  </scg:List>
+                                                </ui:SelectItem.Items>
+                                                <ui:SelectItem.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3907846569b4100ff8359266d9fec4e3" Selector="&lt;webctrl name='rm' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                </ui:SelectItem.Target>
+                                              </ui:SelectItem>
+                                              <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_7" Item="02-Mouila">
+                                                <ui:SelectItem.Items>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                    <x:String>Plant</x:String>
+                                                    <x:String>02-Mouila</x:String>
+                                                  </scg:List>
+                                                </ui:SelectItem.Items>
+                                                <ui:SelectItem.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                </ui:SelectItem.Target>
+                                              </ui:SelectItem>
+                                              <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_8" Item="01">
+                                                <ui:SelectItem.Items>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                    <x:String>Estate</x:String>
+                                                  </scg:List>
+                                                </ui:SelectItem.Items>
+                                                <ui:SelectItem.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="98b44c3f0194576d4845e35495d7f34b" Selector="&lt;webctrl name='estate' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                </ui:SelectItem.Target>
+                                              </ui:SelectItem>
+                                              <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <If Condition="[getUserType.Equals(&quot;CDQ Tapper&quot;)]" sap2010:WorkflowViewState.IdRef="If_4">
+                                              <If.Then>
+                                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_9" Item="AM Test(0000024)">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                        <x:String>Select Reporter</x:String>
+                                                        <x:String>GeneralManager GM(000002)</x:String>
+                                                        <x:String>GM Test(0000022)</x:String>
+                                                        <x:String>GM Test(0000032)</x:String>
+                                                        <x:String>GM Test(000071)</x:String>
+                                                        <x:String>GM TTM1(000099)</x:String>
+                                                        <x:String>GM Rubber(000104)</x:String>
+                                                        <x:String>GM Rubber_1(000111)</x:String>
+                                                        <x:String>GM INT(0002001)</x:String>
+                                                        <x:String>GenMag Test(00021)</x:String>
+                                                        <x:String>GenMag Gabon(000301)</x:String>
+                                                        <x:String>GM Gabon(000501)</x:String>
+                                                        <x:String>GM Gabon_1(000801)</x:String>
+                                                        <x:String>GN Gang1(000901)</x:String>
+                                                        <x:String>GM Gang2(000910)</x:String>
+                                                        <x:String>GM Gang3(000920)</x:String>
+                                                        <x:String>GM1 DEMO1(006100)</x:String>
+                                                        <x:String>GM1 Gang01(007010)</x:String>
+                                                        <x:String>GM DEMO(009001)</x:String>
+                                                        <x:String>GM110 TTM1(010228)</x:String>
+                                                        <x:String>GM0120 TT0021(011937)</x:String>
+                                                        <x:String>GM020 TT001(011947)</x:String>
+                                                        <x:String>GM2h0 TTNuY1(011997)</x:String>
+                                                        <x:String>GM1130 TTM41(012228)</x:String>
+                                                        <x:String>TES110 TEST1(020202)</x:String>
+                                                        <x:String>1GM2110 T12TM1(0205611)</x:String>
+                                                        <x:String>GM1G10 TTM18(030228)</x:String>
+                                                        <x:String>TES310 TEST3(030303)</x:String>
+                                                        <x:String>GM1150 TTM51(05228)</x:String>
+                                                        <x:String>GM2056 LN3056(090090)</x:String>
+                                                        <x:String>GM267 LN352(090091)</x:String>
+                                                        <x:String>GM268 LN322(090591)</x:String>
+                                                        <x:String>GM GTest(100021)</x:String>
+                                                        <x:String>GGM GTest(100081)</x:String>
+                                                        <x:String>GenMngr Test(100101)</x:String>
+                                                        <x:String>GenMngr Test(100201)</x:String>
+                                                        <x:String>GenMngr Test(100301)</x:String>
+                                                        <x:String>GenMngr Test(100401)</x:String>
+                                                        <x:String>GenMngr Test(100501)</x:String>
+                                                        <x:String>GenMngr Test(100601)</x:String>
+                                                        <x:String>GenMngr Test(100701)</x:String>
+                                                        <x:String>1042_tst 9183_tst(10429183)</x:String>
+                                                        <x:String>1229_tst 2112_tst(12292112)</x:String>
+                                                        <x:String>1326_tst 7710_tst(13267710)</x:String>
+                                                        <x:String>1790_tst 7863_tst(17907863)</x:String>
+                                                        <x:String>1885_tst 8923_tst(18858923)</x:String>
+                                                        <x:String>GM GTest(200021)</x:String>
+                                                        <x:String>GGM GTest(200081)</x:String>
+                                                        <x:String>GenMngr Test(200201)</x:String>
+                                                        <x:String>GM21G102 TT2M182(2140280)</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3907846569b4100ff8359266d9fec4e3" Selector="&lt;webctrl name='rm' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_10" Item="02-Mouila">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Plant</x:String>
+                                                        <x:String>02-Mouila</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_11" Item="01">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Estate</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="98b44c3f0194576d4845e35495d7f34b" Selector="&lt;webctrl name='estate' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <If Condition="[getUserType.Equals(&quot;CDQ Fertilizer&quot;)]" sap2010:WorkflowViewState.IdRef="If_5">
+                                                  <If.Then>
+                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_12" Item="AM Test(0000024)">
+                                                        <ui:SelectItem.Items>
+                                                          <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                            <x:String>Select Reporter</x:String>
+                                                            <x:String>GeneralManager GM(000002)</x:String>
+                                                            <x:String>GM Test(0000022)</x:String>
+                                                            <x:String>GM Test(0000032)</x:String>
+                                                            <x:String>GM Test(000071)</x:String>
+                                                            <x:String>GM TTM1(000099)</x:String>
+                                                            <x:String>GM Rubber(000104)</x:String>
+                                                            <x:String>GM Rubber_1(000111)</x:String>
+                                                            <x:String>GM INT(0002001)</x:String>
+                                                            <x:String>GenMag Test(00021)</x:String>
+                                                            <x:String>GenMag Gabon(000301)</x:String>
+                                                            <x:String>GM Gabon(000501)</x:String>
+                                                            <x:String>GM Gabon_1(000801)</x:String>
+                                                            <x:String>GN Gang1(000901)</x:String>
+                                                            <x:String>GM Gang2(000910)</x:String>
+                                                            <x:String>GM Gang3(000920)</x:String>
+                                                            <x:String>GM1 DEMO1(006100)</x:String>
+                                                            <x:String>GM1 Gang01(007010)</x:String>
+                                                            <x:String>GM DEMO(009001)</x:String>
+                                                            <x:String>GM110 TTM1(010228)</x:String>
+                                                            <x:String>GM0120 TT0021(011937)</x:String>
+                                                            <x:String>GM020 TT001(011947)</x:String>
+                                                            <x:String>GM2h0 TTNuY1(011997)</x:String>
+                                                            <x:String>GM1130 TTM41(012228)</x:String>
+                                                            <x:String>TES110 TEST1(020202)</x:String>
+                                                            <x:String>1GM2110 T12TM1(0205611)</x:String>
+                                                            <x:String>GM1G10 TTM18(030228)</x:String>
+                                                            <x:String>TES310 TEST3(030303)</x:String>
+                                                            <x:String>GM1150 TTM51(05228)</x:String>
+                                                            <x:String>GM2056 LN3056(090090)</x:String>
+                                                            <x:String>GM267 LN352(090091)</x:String>
+                                                            <x:String>GM268 LN322(090591)</x:String>
+                                                            <x:String>GM GTest(100021)</x:String>
+                                                            <x:String>GGM GTest(100081)</x:String>
+                                                            <x:String>GenMngr Test(100101)</x:String>
+                                                            <x:String>GenMngr Test(100201)</x:String>
+                                                            <x:String>GenMngr Test(100301)</x:String>
+                                                            <x:String>GenMngr Test(100401)</x:String>
+                                                            <x:String>GenMngr Test(100501)</x:String>
+                                                            <x:String>GenMngr Test(100601)</x:String>
+                                                            <x:String>GenMngr Test(100701)</x:String>
+                                                            <x:String>1042_tst 9183_tst(10429183)</x:String>
+                                                            <x:String>1229_tst 2112_tst(12292112)</x:String>
+                                                            <x:String>1326_tst 7710_tst(13267710)</x:String>
+                                                            <x:String>1790_tst 7863_tst(17907863)</x:String>
+                                                            <x:String>1885_tst 8923_tst(18858923)</x:String>
+                                                            <x:String>GM GTest(200021)</x:String>
+                                                            <x:String>GGM GTest(200081)</x:String>
+                                                            <x:String>GenMngr Test(200201)</x:String>
+                                                            <x:String>GM21G102 TT2M182(2140280)</x:String>
+                                                          </scg:List>
+                                                        </ui:SelectItem.Items>
+                                                        <ui:SelectItem.Target>
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3907846569b4100ff8359266d9fec4e3" Selector="&lt;webctrl name='rm' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                        </ui:SelectItem.Target>
+                                                      </ui:SelectItem>
+                                                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_13" Item="02-Mouila">
+                                                        <ui:SelectItem.Items>
+                                                          <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                            <x:String>Plant</x:String>
+                                                            <x:String>02-Mouila</x:String>
+                                                          </scg:List>
+                                                        </ui:SelectItem.Items>
+                                                        <ui:SelectItem.Target>
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                        </ui:SelectItem.Target>
+                                                      </ui:SelectItem>
+                                                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_14" Item="01">
+                                                        <ui:SelectItem.Items>
+                                                          <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                            <x:String>Estate</x:String>
+                                                          </scg:List>
+                                                        </ui:SelectItem.Items>
+                                                        <ui:SelectItem.Target>
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="98b44c3f0194576d4845e35495d7f34b" Selector="&lt;webctrl name='estate' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                        </ui:SelectItem.Target>
+                                                      </ui:SelectItem>
+                                                      <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <If Condition="[getUserType.Equals(&quot;Worker&quot;)]" sap2010:WorkflowViewState.IdRef="If_6">
+                                                      <If.Then>
+                                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_15" Item="CDQT Test(0000025)">
+                                                            <ui:SelectItem.Items>
+                                                              <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                                <x:String>Select Reporter</x:String>
+                                                                <x:String>GeneralManager GM(000002)</x:String>
+                                                                <x:String>GM Test(0000022)</x:String>
+                                                                <x:String>GM Test(0000032)</x:String>
+                                                                <x:String>GM Test(000071)</x:String>
+                                                                <x:String>GM TTM1(000099)</x:String>
+                                                                <x:String>GM Rubber(000104)</x:String>
+                                                                <x:String>GM Rubber_1(000111)</x:String>
+                                                                <x:String>GM INT(0002001)</x:String>
+                                                                <x:String>GenMag Test(00021)</x:String>
+                                                                <x:String>GenMag Gabon(000301)</x:String>
+                                                                <x:String>GM Gabon(000501)</x:String>
+                                                                <x:String>GM Gabon_1(000801)</x:String>
+                                                                <x:String>GN Gang1(000901)</x:String>
+                                                                <x:String>GM Gang2(000910)</x:String>
+                                                                <x:String>GM Gang3(000920)</x:String>
+                                                                <x:String>GM1 DEMO1(006100)</x:String>
+                                                                <x:String>GM1 Gang01(007010)</x:String>
+                                                                <x:String>GM DEMO(009001)</x:String>
+                                                                <x:String>GM110 TTM1(010228)</x:String>
+                                                                <x:String>GM0120 TT0021(011937)</x:String>
+                                                                <x:String>GM020 TT001(011947)</x:String>
+                                                                <x:String>GM2h0 TTNuY1(011997)</x:String>
+                                                                <x:String>GM1130 TTM41(012228)</x:String>
+                                                                <x:String>TES110 TEST1(020202)</x:String>
+                                                                <x:String>1GM2110 T12TM1(0205611)</x:String>
+                                                                <x:String>GM1G10 TTM18(030228)</x:String>
+                                                                <x:String>TES310 TEST3(030303)</x:String>
+                                                                <x:String>GM1150 TTM51(05228)</x:String>
+                                                                <x:String>GM2056 LN3056(090090)</x:String>
+                                                                <x:String>GM267 LN352(090091)</x:String>
+                                                                <x:String>GM268 LN322(090591)</x:String>
+                                                                <x:String>GM GTest(100021)</x:String>
+                                                                <x:String>GGM GTest(100081)</x:String>
+                                                                <x:String>GenMngr Test(100101)</x:String>
+                                                                <x:String>GenMngr Test(100201)</x:String>
+                                                                <x:String>GenMngr Test(100301)</x:String>
+                                                                <x:String>GenMngr Test(100401)</x:String>
+                                                                <x:String>GenMngr Test(100501)</x:String>
+                                                                <x:String>GenMngr Test(100601)</x:String>
+                                                                <x:String>GenMngr Test(100701)</x:String>
+                                                                <x:String>1042_tst 9183_tst(10429183)</x:String>
+                                                                <x:String>1229_tst 2112_tst(12292112)</x:String>
+                                                                <x:String>1326_tst 7710_tst(13267710)</x:String>
+                                                                <x:String>1790_tst 7863_tst(17907863)</x:String>
+                                                                <x:String>1885_tst 8923_tst(18858923)</x:String>
+                                                                <x:String>GM GTest(200021)</x:String>
+                                                                <x:String>GGM GTest(200081)</x:String>
+                                                                <x:String>GenMngr Test(200201)</x:String>
+                                                                <x:String>GM21G102 TT2M182(2140280)</x:String>
+                                                              </scg:List>
+                                                            </ui:SelectItem.Items>
+                                                            <ui:SelectItem.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3907846569b4100ff8359266d9fec4e3" Selector="&lt;webctrl name='rm' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                            </ui:SelectItem.Target>
+                                                          </ui:SelectItem>
+                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_16" Item="02-Mouila">
+                                                            <ui:SelectItem.Items>
+                                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                                <x:String>Plant</x:String>
+                                                                <x:String>02-Mouila</x:String>
+                                                              </scg:List>
+                                                            </ui:SelectItem.Items>
+                                                            <ui:SelectItem.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d39bee5ce01c2b241f824c7e1344c1d" Selector="&lt;webctrl name='plant' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                            </ui:SelectItem.Target>
+                                                          </ui:SelectItem>
+                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_17" Item="01">
+                                                            <ui:SelectItem.Items>
+                                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                                <x:String>Estate</x:String>
+                                                              </scg:List>
+                                                            </ui:SelectItem.Items>
+                                                            <ui:SelectItem.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="98b44c3f0194576d4845e35495d7f34b" Selector="&lt;webctrl name='estate' parentid='userAddModal' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                            </ui:SelectItem.Target>
+                                                          </ui:SelectItem>
+                                                          <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                                                        </Sequence>
+                                                      </If.Then>
+                                                    </If>
+                                                  </If.Else>
+                                                </If>
+                                              </If.Else>
+                                            </If>
+                                          </If.Else>
+                                        </If>
+                                      </If.Else>
+                                    </If>
+                                  </If.Else>
+                                </If>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9ac77edaf11d97f1147ad4a0264f1968" Selector="&lt;webctrl aaname='Cancel' parentid='userAddModal' tag='BUTTON' type='button' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:OpenBrowser.Body>
+              </ui:OpenBrowser>
+            </Sequence>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xzZ25hbmFzZWthcjQwNDhcRG9jdW1lbnRzXFVpUGF0aFxFeGNlbFByb2Nlc3NcRmxvd2NoYXJ0MS54YW1sf0IDrAUPAgEBSAlI2wEDAYUBSw2kBRgCAQJIN0hDAwGHAUh4SKgBAwGGAU8PowUgAgEDT8UBT+wBAwGEAVUVoAUgAgEEVhdWjwEDAYMBVxdbJQMBgAFcF2AlAgF9YRdvIgIBe3AXnwUiAgEFWaoBWdQBAwGCAVewAle4AgMBgQFeqgFe1wECAX9cswJcuQICAX5tqgFt2AECAXxxGZ4FKQIBBnFKcVYCAXl3H5sFKgIBB3ghhgEsAgF3hwEhhwFoAgF1iAEhjAEvAgFyjQEhkQEvAgFvkgEhlgEvAgFslwEhmwEvAgFpnAEhoAEvAgFmoQEhpQEvAgFjpgEhtwExAgFguAEhvwEzAgFbwAEhiwUmAgEKjAUhmgUsAgEIhAG0AYQB1gICAXiHATGHATsCAXaKAbQBigHcAQIBdIgBuAKIAdwCAgFzjwG0AY8B+wECAXGNAbMCjQHZAgIBcJQBtAGUAYICAgFukgGzApIB2QICAW2ZAbQBmQH8AQIBa5cBswKXAdoCAgFqngG0AZ4B+wECAWicAbMCnAHZAgIBZ6MBtAGjAfgBAgFloQGzAqEB1wICAWSmAc8BpgHxAQIBYbUBtAG1AfgBAgFiuAFXuAFdAgFeugFNugFaAgFcvQG0Ab0B+AECAV/AAS/AAWICAQvCASXMATUCAVjPASWJBSoCAQ2YBbQBmAWKAgIBCcIB0wHCAd4BAgFZygG4AcoB/QECAVrPATPPAWUCAQ7RASmjAjQCAUymAimHBS4CARDSASuMAjsCAVWNAiuXAjsCAVKYAiuhAjsCAU+iAiuiAnICAU2mAjemAmwCARGoAi36AjgCAUD9Ai2FBTICARPSAdkB0gH0AQIBVooCvgGKAoACAgFXjQLZAY0C5AECAVOVAr4BlQKDAgIBVJgC2QGYAt0BAgFQnwK+AZ8ChAICAVGiAjuiAkUCAU6pAi/jAj8CAUnkAi/uAj8CAUbvAi/4Aj8CAUP5Ai/5AnYCAUH9Ajv9AmkCART/AjHRAzwCATTUAzGDBTYCARapAt0BqQLvAQIBSuECwgHhAoQCAgFL5ALdAeQC6AECAUfsAsIB7AKHAgIBSO8C3QHvAuEBAgFE9gLCAfYCiAICAUX5Aj/5AkkCAUKAAzO6A0MCAT27AzPFA0MCATrGAzPPA0MCATfQAzPQA3oCATXUAz/UA3ECARfWAzWoBEACASirBDWBBToCARmAA+EBgAPzAQIBPrgDxgG4A4gCAgE/uwPiAbsD7QECATvDA8YBwwOLAgIBPMYD4gHGA+YBAgE4zQPGAc0DjAICATnQA0PQA00CATbXAzeRBEcCATGSBDecBEcCAS6dBDemBEcCASunBDenBH4CASmrBEOrBG0CARqtBDn/BEQCARzXA+YB1wP4AQIBMo8EygGPBIwCAgEzkgTmAZIE8QECAS+aBMoBmgSPAgIBMJ0E5gGdBOoBAgEspATKAaQEkAICAS2nBEenBFECASquBDvoBEsCASXpBDvzBEsCASL0BDv9BEsCAR/+BDv+BIIBAgEdrgTqAa4E/gECASbmBM4B5gSQAgIBJ+kE6gHpBPUBAgEj8QTOAfEEkwICAST0BOoB9ATuAQIBIPsEzgH7BJQCAgEh/gRL/gRVAgEe</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="ReadCsvFile_2" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MaximizeWindow_1" sap:VirtualizedContainerService.HintSize="1777,22" />
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="1777,134" />
+      <sap2010:ViewStateData Id="TypeInto_2" sap:VirtualizedContainerService.HintSize="1777,134" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="1777,106" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="1703,106" />
+      <sap2010:ViewStateData Id="Delay_2" sap:VirtualizedContainerService.HintSize="1703,22" />
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="TypeInto_6" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="TypeInto_7" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="TypeInto_8" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="GetAttribute_1" sap:VirtualizedContainerService.HintSize="1703,134" />
+      <sap2010:ViewStateData Id="SelectItem_2" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_5" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_3" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_4" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Delay_4" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_6" sap:VirtualizedContainerService.HintSize="314,134">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_7" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_8" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Delay_5" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_9" sap:VirtualizedContainerService.HintSize="314,134">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_10" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_11" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Delay_6" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_12" sap:VirtualizedContainerService.HintSize="314,134">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_13" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_14" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Delay_7" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_15" sap:VirtualizedContainerService.HintSize="314,134">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SelectItem_16" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_17" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Delay_8" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_6" sap:VirtualizedContainerService.HintSize="464,207" />
+      <sap2010:ViewStateData Id="If_5" sap:VirtualizedContainerService.HintSize="689,354" />
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="914,501" />
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="1139,648" />
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="1364,795" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="1703,942" />
+      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="1703,106" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="1725,2812">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEachRow_2" sap:VirtualizedContainerService.HintSize="1755,2959">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="1777,3083">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="1799,3763">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="1813,3862" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">10,104.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">260,124.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">360,175.5 360,205.5 230,205.5 230,85.5 110,85.5 110,104.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,636">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 360,107.5 360,124.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart1_1" sap:VirtualizedContainerService.HintSize="654,716" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
